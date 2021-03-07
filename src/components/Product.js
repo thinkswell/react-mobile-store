@@ -11,12 +11,11 @@ export default class Product extends Component {
       <ProductWrapper className="col-9 max-auto col-md-6 col-lg-3 my-3">
         <div className="card">
           <ProductConsumer>
-            {value => (
+            {(value) => (
               <div
                 className="img-container p-5"
                 onClick={() => {
                   value.handleDetail(id);
-                  value.openModal(id);
                 }}
               >
                 <Link to="/details">
@@ -51,8 +50,8 @@ Product.propTypes = {
     img: PropTypes.string,
     title: PropTypes.string,
     price: PropTypes.number,
-    inCart: PropTypes.bool
-  }).isRequired
+    inCart: PropTypes.bool,
+  }).isRequired,
 };
 
 const ProductWrapper = styled.div`
